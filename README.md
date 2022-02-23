@@ -16,10 +16,13 @@
 ### 3.部署
 **在fork后的github仓库的 “Settings” -->“Secrets” 中添加"Secrets"，name(不用在意大小写)和value分别为：**
 ```
-PUSH_TOKEN
-key
+USER
+
+PASSWORD
+
+PUSH_MESSAGE
 ```
-**这里的key就是自己再第一步获取到的Token**
+**这里的PUSH_MESSAGE就是自己再第一步获取到的Token**
 
 ### 4.运行脚本
 **添加完上面的"Secrets"后，进入"Actions" -->"run main"，点击右边的"Run workflow"即可第一次启动**
