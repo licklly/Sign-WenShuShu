@@ -17,8 +17,7 @@ push_token = os.environ.get('PUSH_MESSAGE')
 
 def send(push_token, title, text):
     # http://www.pushplus.plus/send?token=XXXXX&title=XXX&content=XXX&template=html
-    requests.get(
-        'http://www.pushplus.plus/send?token=' + push_token + '&title=' + title + '&content=' + text + '&template=html')
+    requests.get('http://www.pushplus.plus/send?token=' + push_token + '&title=' + title + '&content=' + text + '&template=html')
 
 
 chrome_options = Options()
@@ -53,7 +52,7 @@ b.implicitly_wait(2)
 # 获取页面源码
 html = b.page_source
 
-if '今日已打卡' in html or '打卡成功' in html:
+if ('今日已打卡' in html or '打卡成功' in html):
     html = html.replace('\n', '')
     names = re.compile('class="m-title5">(.*?)</div>').findall(html)
     values = re.compile('class="re-num m-text9">(.*?)</div>').findall(html)
